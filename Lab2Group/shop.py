@@ -3,8 +3,24 @@ class Shop:
     def __init__(self):
         self.inventory = {}
 
+    def apply_discount(self, item_name, amount, discount):
+       
+        if item_name not in self.inventory:
+            print(f"Item {item_name} not found in inventory.")
+            return False
+        
+   
+        amount = float(self.inventory[item_name])
+
+        discount_amount = amount * discount / 100
+        
+   
+        self.inventory[item_name] = amount - discount_amount
+        return True
+    
+
     def add_item_to_inventory(self, item_name, quantity):
-      
+       
         if item_name in self.inventory:
             self.inventory[item_name] += quantity
         else:
@@ -12,18 +28,7 @@ class Shop:
         return "Item added to inventory"
 
     def decrease_item_quantity(self, item_name, quantity):
-      
+        
         if item_name in self.inventory and self.inventory[item_name] >= quantity:
             self.inventory[item_name] -= quantity
-            result = True
-        
-        else:
-            print(f"Cannot add {item_name} to cart: Not enough in inventory.")
-            result = False
-        
-        print(result)  
-        return result
-
-    def get_inventory(self):
-        
-        return self.inventory
+            resu

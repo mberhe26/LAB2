@@ -8,6 +8,7 @@ if __name__ == "__main__":
 
     customer1.add_to_cart("Shoes", 2)
     customer1.add_to_cart("Hat", 1)
+    customer1.apply_discount("Shoes",20)
 
     customer1.view_cart()
 
