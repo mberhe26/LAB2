@@ -11,5 +11,13 @@ if __name__ == "__main__":
 
     customer1.view_cart()
 
+    #create and process a new order
+    #By Kai Francis
+    order = customer1.create_order()
+    order.add_item_to_order("Shoes", 2)
+    order.add_item_to_order("Hat", 1)
+
+    order.view_order()
+    order.checkout()
 
     print("Remaining Inventory:", customer1.get_inventory())
