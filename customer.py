@@ -20,3 +20,20 @@ class Customer(Shop):
 
     def __str__(self):
         return f"Customer(name={self.name})"
+
+    def create_order(self):
+        return Order(self.name)
+
+class Order:
+    def __init__(self, customer_name):
+        self.customer_name = customer_name
+        self.order_items = []
+
+    def add_item_to_order(self, item_name, quantity):
+        self.order_items.append((item_name, quantity))
+
+    def view_order(self):
+        print(f"Order for {self.customer_name}: {self.order_items}")
+
+    def checkout(self):
+        print(f"Checking out order for {self.customer_name}.")
